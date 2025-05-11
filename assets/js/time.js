@@ -29,8 +29,7 @@ function displayClock() {
 	document.getElementById('minutes').innerText = minutos + sufixo;
 
 	// Exibir como "11 de maio"
-	document.getElementById('month').innerText = `de ${mes}`;
-	document.getElementById('day').innerText = dia;
+	document.getElementById('date').innerText = `${dia} de ${mes}`;
 
 	setTimeout(displayClock, 1000);
 }
