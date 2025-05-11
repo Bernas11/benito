@@ -1,31 +1,36 @@
 // ┌┬┐┬┌┬┐┌─┐
 //  │ ││││├┤
 //  ┴ ┴┴ ┴└─┘
-// Set time and Date
+// Definir hora e data
 
-window.onload = displayClock();
+window.onload = displayClock;
+
 function displayClock() {
-	const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	const monthNamesPT = [
+		'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+		'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+	];
 
-	var d = new Date();
-	var mm = monthNames[d.getMonth()];
-	var dd = d.getDate();
-	var min = (mins = ('0' + d.getMinutes()).slice(-2));
-	var hh = d.getHours();
-	var ampm = '';
+	const d = new Date();
+	const mes = monthNamesPT[d.getMonth()];
+	const dia = d.getDate();
+	const minutos = ('0' + d.getMinutes()).slice(-2);
+	let horas = d.getHours();
+	let sufixo = '';
 
 	if (CONFIG.twelveHourFormat) {
-		ampm = hh >= 12 ? ' pm' : ' am';
-		hh = hh % 12;
-		hh = hh ? hh : 12;
+		sufixo = horas >= 12 ? ' pm' : ' am';
+		horas = horas % 12;
+		horas = horas ? horas : 12;
 	}
 
-	document.getElementById('hour').innerText = hh;
+	document.getElementById('hour').innerText = horas;
 	document.getElementById('separator').innerHTML = ' : ';
-	document.getElementById('minutes').innerText = min + ampm;
+	document.getElementById('minutes').innerText = minutos + sufixo;
 
-	document.getElementById('month').innerText = mm;
-	document.getElementById('day').innerText = dd;
+	// Exibir como "11 de maio"
+	document.getElementById('month').innerText = `de ${mes}`;
+	document.getElementById('day').innerText = dia;
 
 	setTimeout(displayClock, 1000);
 }
