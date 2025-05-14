@@ -152,7 +152,7 @@ const CONFIG = {
 				},
 				{
 					name: 'Whatsapp Web',
-					link: 'https://www.web.whatsapp.com',
+					link: 'https://web.whatsapp.com',
 				},
 			],
 		},
