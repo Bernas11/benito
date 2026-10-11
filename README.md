@@ -24,7 +24,7 @@ A meteorologia fica sem chave e mostra um estado de “não configurada” por o
 
 ## Verificações e limitações
 
-A aplicação é estática e não tem suite de testes automatizada. Verifica manualmente os três layouts, navegação por teclado, tema e meteorologia configurada e não configurada. Recursos de terceiros (ícones/CDN e API meteorológica) dependem da rede e dos respetivos fornecedores.
+A aplicação é estática e ainda não tem testes funcionais automatizados. O GitHub Actions valida a sintaxe JavaScript, impede que `weatherKey` deixe de estar vazio e verifica a configuração Docker Compose. Verifica manualmente os três layouts, navegação por teclado, tema e meteorologia configurada/não configurada. Recursos de terceiros (ícones/CDN e API meteorológica) dependem da rede e dos respetivos fornecedores.
 
 ## Créditos e licença
 
